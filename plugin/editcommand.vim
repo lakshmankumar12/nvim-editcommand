@@ -46,6 +46,8 @@ function! s:format_command(command)
 endfunction
 
 function! s:put_command()
+  let g:nvimeditcommand_last = s:command
+  nnoremap <buffer> <leader>U :%d<CR>:put =g:nvimeditcommand_last
   silent put! =s:command
 endfunction
 
